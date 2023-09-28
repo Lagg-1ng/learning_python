@@ -1,0 +1,14 @@
+# web_service.py
+
+import flask
+
+app = flask.Flask(__name__)
+
+@app.route("/", methods=["GET"])
+def index():
+    name = flask.request.args.get("name", "Гость")
+    message = flask.request.args.get("message", "Привет!")
+    return f"Hello {name}! {message}!"
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8080)

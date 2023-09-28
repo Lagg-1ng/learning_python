@@ -144,3 +144,61 @@ def dz(a, b):
 
 result = dz(2, 3.5)
 print(result)
+
+#логические операторы
+
+
+def age_check(age):
+  print(f'Вам{age} лет')
+  if age < 18:
+    print('Вам нельзя пить')
+  elif age == 18:
+    print('Вам можно пить, но не стоит')
+  elif age > 20 and age < 25:
+    print('Может лучше сок?')
+  else:
+    print('Вам можно пить')
+
+
+age_check(29)
+
+#for in
+days = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс']
+for day in days:
+  #day хранит текущий элемент последовательности,(day) просто временная переменная
+  print(day)
+
+#можно так же
+for i in [1, 2, 3, 4, 5]:
+  print(i)
+
+for day in days:
+  if day == 'ср':
+    break
+  else:
+    print(day)
+
+#модули
+#import math
+
+#x= math.ceil(3.3)
+#print(x)
+
+#модулей много, основные можно изучить в документации
+
+#хорошая практика
+from math import ceil, fabs
+
+x = ceil(3.3)
+y = fabs(-2.45)
+print(x, y)
+
+#так же если что-то не нравиться в названии можем его менять
+from math import ceil as super_ceil
+#теперь
+x = super_ceil(3.3)
+print(x)
+#работа со своими функциями в виде модулей
+from calc import plus4, minus4
+
+print(plus4(1, 2), minus4(1, 2))
